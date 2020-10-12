@@ -1,0 +1,81 @@
+
+
+<div class="card bg-dark text-white">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body" ></div>
+
+    <form #form2="ngForm">
+        <div class="form-group row">
+            <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="producto.nombre" name="nombre"  required> 
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label for="director" class="col-form-label col-sm-2">Director</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="producto.director" name="director">
+               
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label for="protagonista" class="col-form-label col-sm-2">Protagonista</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="producto.protagonista" name="protagonista">
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="productora" class="col-form-label col-sm-2">Productora</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="producto.productora" name="productora" > 
+                
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ano" class="col-form-label col-sm-2">Año</label>
+            <div>
+                <input type="number" class="form-control" [(ngModel)]="producto.ano" name="ano" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="precioAlquiler" class="col-form-label col-sm-2">Precio Alquiler</label>
+            <div>
+                <input type="number" class="form-control" [(ngModel)]="producto.precioAlquiler" name="precioAlquiler" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="precioVenta" class="col-form-label col-sm-2">Precio Venta</label>
+            <div>
+                <input type="number" class="form-control" [(ngModel)]="producto.precioVenta" name="precioVenta" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="estado" class="col-form-label col-sm-2">Estado</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="producto.estado" name="estado" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="stock" class="col-form-label col-sm-2">Stock</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="producto.stock" name="stock" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+                <div class="col-sm-12">
+                <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!producto.id else elseBlock"  [disabled]="!form2.form.valid">Crear</button>
+                <ng-template #elseBlock>
+                    <button class="btn btn-primary" role="button" (click)='update()' [disabled]="!form2.form.valid">Editar</button>
+                </ng-template>
+             </div>   
+        </div>
+    </form>
+
+</div>
+
