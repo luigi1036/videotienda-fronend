@@ -1,0 +1,61 @@
+
+
+<div class="card bg-dark text-white">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body" ></div>
+
+    <form #form3="ngForm">
+        <div class="form-group row">
+            <label for="id" class="col-form-label col-sm-2">Id Juego</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="prestamo.idJuego" name="idJuego" > 
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label for="Cedula" class="col-form-label col-sm-2">Cedula del Cliente</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="prestamo.cedulaCliente" name="cedulaCliente"  required>
+               
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label for="fechaPrestamo" class="col-form-label col-sm-2">Fecha de Prestamo</label>
+            <div>
+                <input type="date" class="form-control" [(ngModel)]="prestamo.fechaAlquiler" name="fechaAlquiler"   required>
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fechaVencimiento" class="col-form-label col-sm-2">Fecha de Vencimiento</label>
+            <div>
+                <input type="date" class="form-control" [(ngModel)]="prestamo.fechaVencimiento" name="fechaVencimiento" > 
+                
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fechaEntrega" class="col-form-label col-sm-2">Fecha de Entrega</label>
+            <div>
+                <input type="date" class="form-control" [(ngModel)]="prestamo.fechaEntrega" name="fechaEntrega" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="estado" class="col-form-label col-sm-2">Estado</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="prestamo.estado" name="estado" >
+               
+            </div>
+        </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!prestamo.id else elseBlock"  [disabled]="!form3.form.valid">Crear</button>
+                <ng-template #elseBlock>
+                    <button class="btn btn-primary" role="button" (click)='update()' [disabled]="!form3.form.valid">Editar</button>
+                </ng-template>
+             </div>   
+        </div>
+    </form>
+
+</div>
+
+

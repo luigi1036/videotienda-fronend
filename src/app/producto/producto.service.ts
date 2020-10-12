@@ -13,7 +13,7 @@ import{ Producto} from './producto';
 export class ProductoService {
 
 private urlEndpoint:string = 'http://localhost:8080/videojuego/listarvideosjuegos';
-private urlEndpointcrear:string = 'http://localhost:8080/clientes/crearCliente';
+private urlEndpointcrear:string = 'http://localhost:8080/videojuego/crearVideojuego';
 private urlEndpointGet:string = 'http://localhost:8080/videojuego/videoJuego';
 private urlEndpointUpdate:string = 'http://localhost:8080/videojuego/videoJuegoUpdate';
 

@@ -19,8 +19,6 @@ private httHeader = new HttpHeaders({'content-type':'application/json'})
 constructor(private http: HttpClient, private router: Router) { }
 
 getClientes(): Observable<Cliente[]>{ 
-  //return of(CLIENTES);}
-  //return this.http.get(this.urlEndpoint).pipe(map(response => response as Cliente[]));
   return this.http.get<Cliente[]>(this.urlEndpoint)
 
 }
@@ -63,15 +61,6 @@ update(cliente: Cliente) :Observable<any>{
   );
 }
 
-delete(id) :Observable<any>{
-  return this.http.delete<any>(`${this.urlEndpoint}/${id}`, {headers: this.httHeader}).pipe(
-    catchError(e => {
-      this.router.navigate(['/clientes']);
-      swal(e.error.mensaje, e.error.error, 'error');
-      return throwError(e);
 
-    })
-  );
-}
 
 }

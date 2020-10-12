@@ -1,0 +1,44 @@
+<div class="card text-black  mb-3" >
+    <div class="card-header">Prestamos</div>
+        <div class="card-body">
+         <h5 class="card-title">Listado De Prestamos</h5>
+        <div class="my-2 text-left">
+            <button class="btn btn-rounded btn-primary" type="button" 
+            [routerLink] = "['/prestamos/form']">Crear Prestamo</button>
+        </div>
+        <div *ngIf="prestamo?.length==0" class="alert alert-info" >
+            No Hay Registros en la base de Datos!!!
+        </div>
+
+        <table class="table table-bordered table-striped mb-12" *ngIf="prestamo?.length>0">
+            <thead>
+               <tr>
+                <th>ID</th>
+                <th>ID JUEGO</th>
+                <th>CEDULA CLIENTE</th>
+                <th>FECHA PRESTAMO</th>
+                <th>FECHA VENCIMIENTO</th>
+                <th>FECHA ENTREGA</th> 
+                <th>ESTADO</th>
+                <th></th>
+               
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let prestamo of prestamo">
+                   <td>{{prestamo.id}}</td>
+                   <td>{{prestamo.idJuego}}</td>
+                   <td>{{prestamo.cedulaCliente}}</td>
+                   <td>{{prestamo.fechaAlquiler}}</td>
+                   <td>{{prestamo.fechaVencimiento}}</td>
+                   <td>{{prestamo.fechaEntrega}}</td>
+                   <td>{{prestamo.estado}}</td>
+                   <td>
+                       <button type="button" name="editar" [routerLink]="['/prestamos/form', prestamo.id]"
+                       class="btn btn-primary">Editar</button>
+                   </td>
+               </tr>
+           </tbody>
+        </table>
+    </div>
+</div>  

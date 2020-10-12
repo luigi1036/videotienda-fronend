@@ -4,7 +4,7 @@ export class Producto {
     director:string;
     protagonista:string;
     productora:string;
-    ao:number;
+    ano:number;
     tecnologia:string;
     precioAlquiler:number;
     precioVenta:number;
