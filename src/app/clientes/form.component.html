@@ -1,0 +1,66 @@
+
+
+<div class="card bg-dark text-white">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body" ></div>
+
+    <form #form1="ngForm">
+        <div class="form-group row">
+            <label for="cedula" class="col-form-label col-sm-2">Cedula</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="cliente.cedula" name="cedula"  required> 
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label for="primerNombre" class="col-form-label col-sm-2">Nombre</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="cliente.primerNombre" name="primerNombre"  required>
+               
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label for="primerApellido" class="col-form-label col-sm-2">Apellido</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="cliente.primerApellido" name="primerApellido"   required>
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-form-label col-sm-2">Email</label>
+            <div>
+                <input type="email" class="form-control" [(ngModel)]="cliente.email" name="email" > 
+                
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="telefono" class="col-form-label col-sm-2">Telefono</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="cliente.telefono" name="telefono" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fechaNacimiento" class="col-form-label col-sm-2">Fecha Nacimiento</label>
+            <div>
+                <input type="date" class="form-control" [(ngModel)]="cliente.fechaNacimiento" name="fechaNacimiento" >
+               
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="estado" class="col-form-label col-sm-2">Estado</label>
+            <div>
+                <input type="text" class="form-control" [(ngModel)]="cliente.estado" name="estado" >
+               
+            </div>
+        </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!cliente.id else elseBlock"  [disabled]="!form1.form.valid">Crear</button>
+                <ng-template #elseBlock>
+                    <button class="btn btn-primary" role="button" (click)='update()' [disabled]="!form1.form.valid">Editar</button>
+                </ng-template>
+             </div>   
+        </div>
+    </form>
+
+</div>
